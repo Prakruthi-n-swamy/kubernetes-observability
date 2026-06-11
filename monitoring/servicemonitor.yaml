@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+
+kind: ServiceMonitor
+
+metadata:
+  name: springboot-monitor
+
+spec:
+
+  selector:
+
+    matchLabels:
+
+      app: springboot-app
+
+  endpoints:
+
+  - port: http
+
+    interval: 15s
